@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1.mb-3= title
+    form(method="POST", action="/tuzik/:id")
+        .form-group
+            label(for='name') Music Add
+            input#name.form-control(type='text', name='name')
+        .form-group
+            label(for='singer') Singer
+            input#name.form-control(type='text', name='singer')
+        .form-group
+            label(for='comments') Comments
+            input#name.form-control(type='text', name='comment')
+        button.btn.btn-success(type='submit') Upload
