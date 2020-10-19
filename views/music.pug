@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1.mb-3= title
+    h4 Name: 
+        h2 #{musics.name}
+    hr
+    h5 Singer:
+        h3 #{musics.singer}
+    hr
+    h5 Comments:
+        h6 #{musics.comment}
+    hr
+    a(href="/music/edit/"+ musics._id).btn.btn-warning.mr-5 Edit the Music
+    a(href="/music/delete/"+ musics._id).btn.btn-danger Delete

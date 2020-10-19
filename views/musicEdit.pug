@@ -1,15 +1,15 @@
 extends layout
 
 block content
-    h1.mb-3= title
-    form(method="POST", action="/tuzik/:id")
+    h1.mb-5=title
+    form(method="POST", action="/music/edit/" + musics._id)
         .form-group
-            label(for='name') Music Add
-            input#name.form-control(type='text', name='name')
+            label(for='name') Edit the Name
+            input#name.form-control(type='text', name='name' value=musics.name)
         .form-group
-            label(for='singer') Singer
-            input#name.form-control(type='text', name='singer')
+            label(for='singer') Edit the singer
+            input#name.form-control(type='text', name='singer' value= musics.singer)
         .form-group
             label(for='comments') Comments
-            input#name.form-control(type='text', name='comment')
-        button.btn.btn-success(type='submit') Upload
+            input#name.form-control(type='text', name='comment' value= musics.comment)
+        button.btn.btn-success(type='submit') Edit

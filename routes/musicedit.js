@@ -1,25 +1,29 @@
-const express = require('express');
-const Music = require('../model/Music');
+const express = require("express");
+const Music = require("../model/Music");
 const router = express.Router();
 
 /* GET users listing. */
-router.get('/edit/:id', function(req, res, next) {
-  Music.findById(req.params.id, (err, musics)=>{
-    console.log(musics);
-    res.render('musicEdit', {
-      title:"Edit the chosen music", musics
+router.get("/edit/:id", function (req, res, next) {
+  Music.findById(req.params.id, (err, musics) => {
+    res.render("musicEdit", {
+      title: "Edit the Music",
+      musics,
     });
   });
 });
 
-router.put('/:id', function(req, res, next){
-  const promise = Music.findByIdAndUpdate(req.params.id, musics);
-  promise
-  .then((data)=>{
-    res.json(data);
-  })
-  .catch((err)=>console.log(err));
-})
+router.post("/edit/:id", (req, res) => {
+  const music = {};
+  music.name = req.body.name;
+  music.singer = req.body.singer;
+  music.comment = req.body.comment;
+
+  const query = { _id: req.params.id }; 
+
+  Music.update(query, music, (err) => {
+    if (err) console.log(err);
+    res.redirect("/");
+  });
+});
 
 module.exports = router;
- 

@@ -6,9 +6,9 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const addRouter = require('./routes/addrout');
-const editRouter = require('./routes/musicedit');
-
-
+const musicRouter = require('./routes/music');
+const editRouter = require("./routes/musicEdit");
+const deleteRouter = require("./routes/musicDelete");
 const app = express();
 
 //===============MONGO DB ulandi =======================
@@ -28,8 +28,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/music', addRouter);
-app.use('/tuzik', editRouter);
-
+app.use('/music', musicRouter);
+app.use("/music", editRouter);
+app.use("/music", deleteRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
