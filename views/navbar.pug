@@ -8,13 +8,25 @@ nav.mb-5.navbar.navbar-expand-lg.navbar-light.bg-dark
         ul.navbar-nav.mr-auto
             if(isIndex)
                 li.nav-item.active
-                    a.nav-link.active(href='/') Bosh sahifa
+                    a.nav-link.active(href='/') Home Page
             else
                 li.nav-item.text-white
-                    a.nav-link.text-white(href='/') Bosh sahifa
+                    a.nav-link.text-white(href='/') Home Page
             if(isMusic)
                 li.nav-item.active
-                    a.nav-link.active(href='/music/add') Musiqa qo'shish
+                    a.nav-link.active(href='/music/add') Music Add
             else
                 li.nav-item.text-white
-                    a.nav-link.text-white(href='/music/add') Musiqa qo'shish
+                    a.nav-link.text-white(href='/music/add') Music Add
+            if(isRegister)
+                li.nav-item.active
+                    a.nav-link.active(href='/register') Registrate
+            else
+                li.nav-item.text-white
+                    a.nav-link.text-white(href='/register') Registrate
+            if(isLogin)
+                li.nav-item.active
+                    a.nav-link.active(href='/login') Sign In
+            else
+                li.nav-item.text-white
+                    a.nav-link.text-white(href='/login') Sign In

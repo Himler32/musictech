@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    h1.mb-5=title
+    form(method="POST", action="/register")
+        .form-group
+            label(for='name') Your Name
+            input#name.form-control(type='text', name='name')
+        .form-group
+            label(for='surname') Your Surname
+            input#surname.form-control(type='text', name='surname')
+        .form-group
+            label(for='password') Password
+            input#password.form-control(type='password', name='password')
+        .form-group
+            label(for='password1') Confirm the Password
+            input#password1.form-control(type='password', name='password1')
+        button.btn.btn-success(type='submit') Sign Up
